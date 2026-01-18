@@ -21,7 +21,7 @@ const sendEmail = async (subject, send_to, template, reply_to, cc) => {
       name: "vortexexperts Platform",
       link: "https://vortexexperts.live/",
       // Optional product logo
-      logo: 'https://vortexexperts.live/logo.png',
+      logo: 'https://res.cloudinary.com/dfs05thsj/image/upload/v1768695257/logo_j0eiyp.png',
        // Custom logo height
       logoHeight: '70px'
     },
