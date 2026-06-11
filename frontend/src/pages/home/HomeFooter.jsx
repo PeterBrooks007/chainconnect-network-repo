@@ -36,7 +36,7 @@ const theme = useTheme();
       sx={{ borderTop: "0.5px solid darkgrey", padding: "10px" }}
       color={"white"}
     >
-      (c) Copyright © {new Date().getFullYear()} Vortexexperts, Inc.       
+      (c) Copyright © {new Date().getFullYear()} Vixcapital, Inc.       
       </Box>
     </>
   );

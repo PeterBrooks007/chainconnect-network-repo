@@ -198,7 +198,7 @@ const sendOTP = asyncHandler(async (req, res) => {
   
   
   // Send OTP Email to the user
-  const subject = "OTP CODE - vortexexperts"
+  const subject = "OTP CODE - vixcapital"
   const send_to = user.email
   const template =  twofaAuthentication ? twoFaOtpEmailTemplate(user.firstname+" "+user.lastname, new_otp) :  otpEmailTemplate(user.firstname+" "+user.lastname, new_otp)
   const reply_to = process.env.EMAIL_USER
@@ -210,10 +210,10 @@ const sendOTP = asyncHandler(async (req, res) => {
 if(twofaAuthentication !== true && verifyEmailResendOtp !== true) {
 
  // Send New Account Registration Notification email to admin
- const subjectAdmin = "New User Registration - vortexexperts"
+ const subjectAdmin = "New User Registration - vixcapital"
  const send_to_Admin = process.env.EMAIL_USER
  const templateAdmin = NewUserEmailTemplate("Admin", user)
- const reply_toAdmin = "no_reply@vortexexperts.live"
+ const reply_toAdmin = "no_reply@vixcapital.live"
 
  await sendEmail(subjectAdmin, send_to_Admin, templateAdmin, reply_toAdmin)
 
@@ -542,10 +542,10 @@ const idVerificationUpload = asyncHandler(async (req, res) => {
     // Send User uploaded new ID Notification Email to admin
 const introMessage = `This user ${user.firstname+" "+user.lastname} with email address ${user.email} is requesting an ID Verification`
 
-  const subjectAdmin = "ID Verification Request - vortexexperts"
+  const subjectAdmin = "ID Verification Request - vixcapital"
   const send_to_Admin = process.env.EMAIL_USER
   const templateAdmin = adminGeneralEmailTemplate("Admin", introMessage)
-  const reply_toAdmin = "no_reply@vortexexperts.live"
+  const reply_toAdmin = "no_reply@vixcapital.live"
 
   await sendEmail(subjectAdmin, send_to_Admin, templateAdmin, reply_toAdmin)
 
@@ -622,7 +622,7 @@ const loginUser = asyncHandler(async (req, res) => {
     console.log("2FA OTP CODE", new_otp);
 
      // Send 2FA OTP Email to the user
-  const subject = "OTP CODE - vortexexperts"
+  const subject = "OTP CODE - vixcapital"
   const send_to = user.email
   const template = twoFaOtpEmailTemplate(user.firstname+" "+user.lastname, new_otp)
   const reply_to = process.env.EMAIL_USER
@@ -1721,7 +1721,7 @@ const adminApproveId = asyncHandler(async (req, res) => {
    // Send approval status email to the user
     const introMessage = `Your ID verification has been reviewed by our team and your ${message}`
 
-    const subject = "ID Approval Status - vortexexperts"
+    const subject = "ID Approval Status - vixcapital"
     const send_to = user.email
     const template = userGeneralEmailTemplate(user.firstname+" "+user.lastname, introMessage)
     const reply_to = process.env.EMAIL_USER
@@ -1736,8 +1736,8 @@ const adminApproveId = asyncHandler(async (req, res) => {
     {
       to: user.email,
       from: "Support Team",
-      subject: "Welcome to vortexexperts",
-      content: `Hello ${user.firstname+" "+user.lastname}, We're excited to have you on board. vortexexperts is an international investment company that combines the infrastructure and abilities of an investor with a best-in-class team of operations professionals. This unique combination of skills  has allowed us to become a top international Investment Platform.For more enquiry kindly contact your account manager or write directly with our live chat support on our platform or you can send a direct mail to us at support@vortexexperts.live.`,
+      subject: "Welcome to vixcapital",
+      content: `Hello ${user.firstname+" "+user.lastname}, We're excited to have you on board. vixcapital is an international investment company that combines the infrastructure and abilities of an investor with a best-in-class team of operations professionals. This unique combination of skills  has allowed us to become a top international Investment Platform.For more enquiry kindly contact your account manager or write directly with our live chat support on our platform or you can send a direct mail to us at support@vixcapital.live.`,
     },
   ];
 
@@ -1756,7 +1756,7 @@ const adminApproveId = asyncHandler(async (req, res) => {
      from: searchWord,
      notificationIcon: "CurrencyCircleDollar",
      title: "Account Activation",
-     message: `Your trade account has been activated successfully. Welcome to vortexexperts`,
+     message: `Your trade account has been activated successfully. Welcome to vixcapital`,
      route: "/dashboard"
    };
  
@@ -2102,7 +2102,7 @@ const adminSendCustomizedMail = asyncHandler(async (req, res) => {
    const subject = req.body.subject
    const send_to = req.body.to
    const template = sendCustomizeEmailTemplate(req.body.fullName, introMessage)
-   const reply_to = "no-reply@vortexexperts.live"
+   const reply_to = "no-reply@vixcapital.live"
    const customizedLogo = req.body.customizedLogo
 
    await sendCustomizedEmail(subject, send_to, template, reply_to, customizedLogo)
@@ -2372,10 +2372,10 @@ const contactUs = asyncHandler(async (req, res) => {
     sent a contact us message.<br><br>
      Message: " ${message} " `;
 
-    const subjectAdmin = "Contact Us - vortexexperts"
+    const subjectAdmin = "Contact Us - vixcapital"
     const send_to_Admin = process.env.EMAIL_USER
     const templateAdmin = adminGeneralEmailTemplate("Admin", introMessage)
-    const reply_toAdmin = "no_reply@vortexexperts.live"
+    const reply_toAdmin = "no_reply@vixcapital.live"
 
     await sendEmail(subjectAdmin, send_to_Admin, templateAdmin, reply_toAdmin)
 
@@ -2467,10 +2467,10 @@ const requestCard = asyncHandler(async (req, res) => {
     with email address ${email}<br><br>
     is requesting for a ${cardType}.<br>`;
 
-    const subjectAdmin = `${cardType} Request - vortexexperts`
+    const subjectAdmin = `${cardType} Request - vixcapital`
     const send_to_Admin = process.env.EMAIL_USER
     const templateAdmin = adminGeneralEmailTemplate("Admin", introMessage)
-    const reply_toAdmin = "no_reply@vortexexperts.live"
+    const reply_toAdmin = "no_reply@vixcapital.live"
 
     await sendEmail(subjectAdmin, send_to_Admin, templateAdmin, reply_toAdmin)
 
@@ -2509,12 +2509,12 @@ const forgotPassword = asyncHandler(async (req, res) => {
     
     // Send Forget Email Link to the user
 
-    const resetPasswordLink = `https://vortexexperts.live/auth/reset-password/${resetToken}`
+    const resetPasswordLink = `https://vixcapital.live/auth/reset-password/${resetToken}`
 
-    const subject = "Reset Password - vortexexperts"
+    const subject = "Reset Password - vixcapital"
     const send_to = user.email
     const template = resetPasswordEmailTemplate(user.firstname+" "+user.lastname, resetPasswordLink)
-    const reply_to = "no-reply@vortexexperts.live"
+    const reply_to = "no-reply@vixcapital.live"
 
     await sendEmail(subject, send_to, template, reply_to)
 
@@ -2600,10 +2600,10 @@ const upgradeAccount = asyncHandler(async (req, res) => {
     wishes to UPGRADE his account to ${selectedPackage} Package.<br><br>
      Comment: " ${comment} " `;
 
-    const subjectAdmin = "Upgrade Account - vortexexperts"
+    const subjectAdmin = "Upgrade Account - vixcapital"
     const send_to_Admin = process.env.EMAIL_USER
     const templateAdmin = adminGeneralEmailTemplate("Admin", introMessage)
-    const reply_toAdmin = "no_reply@vortexexperts.com"
+    const reply_toAdmin = "no_reply@vixcapital.com"
 
     await sendEmail(subjectAdmin, send_to_Admin, templateAdmin, reply_toAdmin)
 

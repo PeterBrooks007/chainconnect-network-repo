@@ -101,7 +101,7 @@ const HomeMobile = () => {
           <Stack
             direction={"row"}
             alignItems={"center"}
-            spacing={-1}
+            spacing={1}
             justifyContent={"center"}
             width={"100%"}
           >
@@ -117,7 +117,7 @@ const HomeMobile = () => {
               fontWeight={900}
               fontSize={isMobile ? "40px" : "60px"}
             >
-              ortexexperts
+              Vixcapital
             </MotionTypography>
           </Stack>
 
@@ -130,7 +130,7 @@ const HomeMobile = () => {
             fontWeight={900}
           >
             CHALLENGE THE MARKET WITH{" "}
-            <span style={{ color: "gold" }}> VORTEXEXPERTS WEB APP </span>
+            <span style={{ color: "gold" }}> Vixcapital WEB APP </span>
           </MotionTypography>
 
           <MotionTypography
@@ -143,7 +143,7 @@ const HomeMobile = () => {
               color: "white",
             }}
           >
-            Join over 26 million users who have already chosen the Vortexexperts web
+            Join over 26 million users who have already chosen the Vixcapital web
             app for trading.
           </MotionTypography>
 

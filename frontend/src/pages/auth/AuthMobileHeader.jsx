@@ -54,7 +54,7 @@ const AuthMobileHeader = ({ writeUp, buttonText, link, accountSetup }) => {
       >
         <Stack
           direction={"row"}
-          spacing={-0.5}
+          spacing={0.5}
           alignItems={"center"}
           sx={{ cursor: "pointer" }}
           display={{ xs: "flex", md: "none" }}
@@ -65,7 +65,7 @@ const AuthMobileHeader = ({ writeUp, buttonText, link, accountSetup }) => {
            <img src={LogoImg} alt="logo" width={40} />
 
            <Typography variant="h6" fontWeight={"600"}>
-                       ortexexperts
+                       Vixcapital
                       </Typography>
         </Stack>
         <Stack

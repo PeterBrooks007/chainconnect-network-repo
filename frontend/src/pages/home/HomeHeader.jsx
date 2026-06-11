@@ -84,7 +84,7 @@ const HomeHeader = () => {
             fontWeight={"700"}
             sx={{ display: { xs: "none", sm: "flex", color: "white" } }}
           >
-            Vortexexperts
+            Vixcapital
           </Typography>
         </Link>
       </Box>

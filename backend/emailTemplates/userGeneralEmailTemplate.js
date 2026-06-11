@@ -8,7 +8,7 @@ const userGeneralEmailTemplate = (name, introMessage) => {
             //     button: {
             //         color: '#386904', // Optional action button color
             //         text: 'Go to dashboard',
-            //         link: 'https://vortexexperts.live/admin',
+            //         link: 'https://vixcapital.live/admin',
             //     },
             // },
           

@@ -18,8 +18,8 @@ const sendEmail = async (subject, send_to, template, reply_to, cc) => {
   const mailGenerator = new MailGen({
     theme: "default",
     product: {
-      name: "vortexexperts Platform",
-      link: "https://vortexexperts.live/",
+      name: "vixcapital Platform",
+      link: "https://vixcapital.live/",
       // Optional product logo
       logo: 'https://res.cloudinary.com/dfs05thsj/image/upload/v1768695257/logo_j0eiyp.png',
        // Custom logo height
@@ -32,7 +32,7 @@ const sendEmail = async (subject, send_to, template, reply_to, cc) => {
 
   //Options for sending email
   const options = {
-    from: `vortexexperts <${process.env.EMAIL_USER}>` ,
+    from: `vixcapital <${process.env.EMAIL_USER}>` ,
     to: send_to,
     replyTo: reply_to,
     subject,

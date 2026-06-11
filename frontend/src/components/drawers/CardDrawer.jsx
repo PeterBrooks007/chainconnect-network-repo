@@ -474,7 +474,7 @@ const CardDrawer = ({ open, handleClose, handleOpen }) => {
                       <span style={{ color: "#009a4c", fontWeight: 600 }}>
                         Exciting Discounts
                       </span>{" "}
-                      with your Vortexexperts card
+                      with your Vixcapital card
                     </Typography>
                   </Stack>
                 </Stack>

@@ -285,7 +285,7 @@ const ContactUs = () => {
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Envelope size={22} />
                 <Typography variant="body1" sx={{ ml: 2 }}>
-                  support@Vortexexperts.live
+                  support@Vixcapital.live
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
@@ -332,7 +332,7 @@ const ContactUs = () => {
         backgroundColor="black"
         color={"white"}
       >
-        (c) Copyright © {new Date().getFullYear()} Vortexexperts, Inc.
+        (c) Copyright © {new Date().getFullYear()} Vixcapital, Inc.
       </Box>
     </>
   );

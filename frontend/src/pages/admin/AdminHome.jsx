@@ -656,7 +656,7 @@ const Dashboard = () => {
             borderRadius={"10px"}
           >
             <Typography>
-              All contents © {new Date().getFullYear()} Vortexexperts Ltd.
+              All contents © {new Date().getFullYear()} Vixcapital Ltd.
               All rights reserved.
             </Typography>
           </Stack>
