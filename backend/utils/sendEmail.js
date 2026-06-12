@@ -21,7 +21,7 @@ const sendEmail = async (subject, send_to, template, reply_to, cc) => {
       name: "vixcapital Platform",
       link: "https://vixcapital.live/",
       // Optional product logo
-      logo: 'https://res.cloudinary.com/dfs05thsj/image/upload/v1768695257/logo_j0eiyp.png',
+      logo: 'https://res.cloudinary.com/dmgo9qi2y/image/upload/v1781226875/logo_wmqd2k.png',
        // Custom logo height
       logoHeight: '70px'
     },
