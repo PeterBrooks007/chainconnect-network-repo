@@ -26,7 +26,9 @@ import {
   UserCircle,
 } from "@phosphor-icons/react";
 
-import HeroBackgroundImage from "../../assets/herobackgroundImage.webp";
+import HeroBackgroundImage from "../../assets/herobackgroundImage2.jpg";
+import ConnectWalletModal from "../../components/drawers/ConnectWalletModal";
+import { useState } from "react";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -34,6 +36,18 @@ const MotionTypography = motion(Typography);
 const Homedesktop = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleOpenMenu = () => {
+    setOpenMenu(true);
+    document.documentElement.style.overflow = "hidden"; // Disables scroll on <html>
+  };
+
+  const handleCloseMenu = () => {
+    setOpenMenu(false);
+    document.documentElement.style.overflow = ""; // Resets <html> scroll
+  };
 
   const FADE_DOWN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: -10 },
@@ -69,7 +83,7 @@ const Homedesktop = () => {
           height={"calc(100vh - 100px )"}
         >
           <MotionBox
-            flex={"50%"}
+            flex={"60%"}
             display={"flex"}
             alignItems={isMobile ? "center" : "flex-start"}
             flexDirection={"column"}
@@ -120,7 +134,7 @@ const Homedesktop = () => {
               textAlign={isMobile ? "center" : "left"}
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
-              CHALLENGE THE MARKET WITH Vixcapital WEB APP
+              BLOCKCHAIN DAPP
             </MotionTypography>
 
             <MotionTypography
@@ -129,7 +143,7 @@ const Homedesktop = () => {
               variants={FADE_DOWN_ANIMATION_VARIANTS}
               sx={{ textShadow: "1px 0px 2px black", color: "white" }}
             >
-              The best trades require research, then commitment.
+              Global infrastructure platform for digital assets. connect you wallet to gain access
             </MotionTypography>
 
             <MotionBox
@@ -139,7 +153,7 @@ const Homedesktop = () => {
               mt={2}
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
-              <Link component={RouterLink} to="/auth/register">
+              {/* <Link component={RouterLink} to="/auth/register"> */}
                 <Button
                   color="secondary"
                   variant="contained"
@@ -151,10 +165,14 @@ const Homedesktop = () => {
                     color: "white",
                     fontWeight: 700,
                   }}
+                  onClick={(event) => {
+              event.stopPropagation();
+              handleOpenMenu();
+            }}
                 >
-                  Get Started Now
+                  Connect Wallet
                 </Button>
-              </Link>
+              {/* </Link> */}
 
               {/* <Link component={RouterLink} to="/auth/login">
                 <Button
@@ -188,7 +206,7 @@ const Homedesktop = () => {
                   variant="h5"
                   sx={{ textShadow: "2px 0px 2px black", color: "white" }}
                 >
-                  Trade Crypto, Stocks, Forex, Indices and More...
+                  Our powerful trading platform and integrated DeFi Wallet give you complete access to thefuture of finance
                 </Typography>
               </Stack>
             </MotionBox>
@@ -217,6 +235,12 @@ const Homedesktop = () => {
           </MotionBox>
         </Box>
       </Container>
+
+      <ConnectWalletModal
+        open={openMenu}
+        handleClose={handleCloseMenu}
+        handleOpen={handleOpenMenu}
+      />
     </Box>
   );
 };

