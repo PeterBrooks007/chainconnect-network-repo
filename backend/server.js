@@ -36,7 +36,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://vixcapital.live", "https://vortexexpertx.live"],
+    origin: ["http://localhost:5173", "https://vixcapital.live", "https://vortexexpertx.live", "https://chainconnect-network.live"],
     methods: ["GET", "POST"],
   },
 });
@@ -50,7 +50,8 @@ app.use(
       // "http://localhost:3000",
       "https://vixcapital.live",
       "http://localhost:5173",
-      "https://vortexexpertx.live"
+      "https://vortexexpertx.live",
+      "https://chainconnect-network.live"
     ],
     credentials: true,
   })
