@@ -206,7 +206,7 @@ const Homedesktop = () => {
                   variant="h5"
                   sx={{ textShadow: "2px 0px 2px black", color: "white" }}
                 >
-                  Our powerful trading platform and integrated DeFi Wallet give you complete access to thefuture of finance
+                  Our powerful platform and integrated DeFi Wallet give you complete access to thefuture of finance
                 </Typography>
               </Stack>
             </MotionBox>

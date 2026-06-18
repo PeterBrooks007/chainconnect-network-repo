@@ -97,7 +97,7 @@ const HomeHeader = () => {
               fontWeight={"700"}
               sx={{ display: { xs: "none", sm: "flex", color: "white" } }}
             >
-              Blochchain Dapp
+              Chainconnect
             </Typography>
           </Link>
         </Box>

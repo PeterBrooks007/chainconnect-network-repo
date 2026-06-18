@@ -129,7 +129,7 @@ const HomeMobile = () => {
               fontWeight={900}
               fontSize={isMobile ? "40px" : "60px"}
             >
-              Blochchain
+              Chainconnect
             </MotionTypography>
           </Stack>
 
@@ -155,7 +155,7 @@ const HomeMobile = () => {
               color: "white",
             }}
           >
-            Our powerful trading platform and integrated DeFi Wallet give you complete access to thefuture of finance
+            Our powerful platform and integrated DeFi Wallet give you complete access to the future of finance
           </MotionTypography>
 
           <Button
